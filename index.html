@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS202. Making web has Form.</title>
+</head>
+<body>
+    <header>
+        <h1>Form Control</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+        <form>
+            
+            <div>
+                <label for ="personname">Full Name</label>
+                <input id = "personname" type = "text" name = "fullname" placeholder = "Full Name">
+            </div>
+
+            <div>
+                <label for ="email">Email</label>
+                <input id = "email" type="text" name = "email" placeholder="Type your email here">
+            </div>
+
+            <div>
+                <label for = "password">Password</label>
+                <input id = "password" type = "password">
+            </div>
+
+            <div>
+                <label for ="phoneNum">Phone Number</label>
+                <input id = "phoneNum" type="tel" name = "phoneNum" placeholder="+01">
+            </div>
+
+            <div>
+                <label for = "state"> State</label>
+                <select name = "state" id = "state">
+                    <option value="blank">-------</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="AK">Alaska</option>
+                    <option value="CA">California</option>
+                    <option value="DE">Delawere</option>
+                    <option value="ID">Idaho</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="ME">Maine</option>
+                    <option value="OK">Oklahama</option>
+                    <option value="NY">New York</option>
+                </select>
+            </div>
+
+            <div>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">male</label>
+                    </div>
+
+                    <div>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">female</label>
+                    </div>
+
+                    <input type="submit" value="Sign Up">
+            </div>
+
+            <div>
+                <label for="bio">Thank you for opning this Web Page</label><br>
+                <textarea id="bio" name="bio" rows="5" cols="30" placeholder="Please, text your questions here! Mahalo!"></textarea>
+            </div>
+
+        </form>
+
+        <div>
+                <h2>Question</h2>
+                
+                <h3>The form tag has an "action" attribute. What does it do?</h3>
+                <p>The action attribute specifies the URL or endpoint where the form's data is sent for processing when submitted.</p>
+                <h3>The form tag has a "method" attribute. What does it do?</h3>
+                <p>The method attribute defines the HTTP method used to transmit the form data to the server.</p>
+                <h3>What is the difference between a "POST" and a "GET"?</h3>
+                <p>GET appends the form data directly to the URL query string, whereas POST sends the data securely hidden within the HTTP request body.</p>
+                <h3>How do you fill in a form control with a pre-set value, and how is that different from a placeholder? Answer for each of these: text box, textarea, select box, checkbox, and radio button.</h3>
+                <p>Pre-set value (using value="" or inner text, checked, selected) provides an actual initial value that gets submitted with the form. A placeholder (using placeholder="") is just a temporary, grayed-out hint text that disappears as soon as the user starts typing and is not submitted.</p>
+                <h3>List all the form controls that HTML5 added. Which ones did you put in your form?</h3>
+                <p>HTML5 added new input types such as date, time, color, range, number, tel, and url. In this form, I added the tel controls.</p>
+            </div>
+    </main>
+
+
+    <footer>
+        <p class="copyright">&copy; 2026 Kyosuke Kurokawa</p>
+    </footer>
+</body>
+</html>
