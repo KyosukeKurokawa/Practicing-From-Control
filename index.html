@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS202. Making web has Form.</title>
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
     <header>
@@ -17,29 +18,35 @@
       </ul>
     </nav>
     <main>
-        <form>
-            
-            <div>
+        <form action="formprocessing.html" method="post">
+            <fieldset>
+                <legend>Account</legend>
+            <div class="form-row">
                 <label for ="personname">Full Name</label>
                 <input id = "personname" type = "text" name = "fullname" placeholder = "Full Name">
             </div>
 
-            <div>
+            <div class="form-row">
                 <label for ="email">Email</label>
-                <input id = "email" type="text" name = "email" placeholder="Type your email here">
+                <input id = "email" type="text" name = "email" value="kyosuke@byuh.edu">
             </div>
 
-            <div>
+            <div class="form-row">
+                <label for="bdtate">Birthday</label>
+                <input type="type" name="bdate" id="dbate">
+            </div>
+
+            <div class="form-row">
                 <label for = "password">Password</label>
-                <input id = "password" type = "password">
+                <input id = "password" type = "password" name="pass">
             </div>
 
-            <div>
+            <div class="form-row">
                 <label for ="phoneNum">Phone Number</label>
                 <input id = "phoneNum" type="tel" name = "phoneNum" placeholder="+01">
             </div>
 
-            <div>
+            <div class="form-row">
                 <label for = "state"> State</label>
                 <select name = "state" id = "state">
                     <option value="blank">-------</option>
@@ -55,21 +62,25 @@
                 </select>
             </div>
 
-            <div>
-                <div>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">male</label>
-                    </div>
+            <div class="check-row">
+                <div class="spacer">Gender:</div>
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="male"> Female</label>
+            </div>
+    
+                <div class="form-row">
+                    <label for="comments">Comments</label>
+                    <textarea name="comments" id="comments"></textarea>
+                </div>
 
-                    <div>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">female</label>
-                    </div>
-
+                <div class="form-row">
+                    <div class="spacer"></div>
                     <input type="submit" value="Sign Up">
+                </div>
+                </fieldset>
             </div>
 
-            <div>
+            <div class="form-row">
                 <label for="bio">Thank you for opning this Web Page</label><br>
                 <textarea id="bio" name="bio" rows="5" cols="30" placeholder="Please, text your questions here! Mahalo!"></textarea>
             </div>
@@ -89,7 +100,18 @@
                 <p>Pre-set value (using value="" or inner text, checked, selected) provides an actual initial value that gets submitted with the form. A placeholder (using placeholder="") is just a temporary, grayed-out hint text that disappears as soon as the user starts typing and is not submitted.</p>
                 <h3>List all the form controls that HTML5 added. Which ones did you put in your form?</h3>
                 <p>HTML5 added new input types such as date, time, color, range, number, tel, and url. In this form, I added the tel controls.</p>
-            </div>
+        </div>
+
+        <div>
+            <h2>Question 2</h2>
+
+            <h3>What are different ways to style your form?</h3>
+            <p>We can style forms using external CSS stylesheets, internal style tags, or inline styles by applying CSS properties, such as the box model, flexbox, and pseudo-classes. </p>
+            <h3>Why does the professor like to use flex?</h3>
+            <p>Flexbox makes it easy to align labels and input fields side-by-side into clean, evenly spaced rows and manage responsive alignment.</p>
+            <h3>What makes for a good mobile form?</h3>
+            <p>A good mobile form features a stacked single-column layout, large tap targets, readable font sizes, and enough padding to easily tap and type on small screens without zooming.</p>
+        </div>
     </main>
 
 
