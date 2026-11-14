@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS202. Project for making Form</title>
+    <link rel="stylesheet" href="projectForm.css">
+</head>
+<body>
+    <header>
+        <h1>Form Control for project</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+        <form action="formprocessing.html" method="post">
+            <fieldset>
+                <legend>Account</legend>
+            <div class="form-row">
+                <label for ="personname">Full Name</label>
+                <input id = "personname" type = "text" name = "fullname" placeholder = "Full Name">
+            </div>
+
+            <div class="form-row">
+                <label for ="email">Email</label>
+                <input id = "email" type="text" name = "email" value="kyosuke@byuh.edu">
+            </div>
+
+            <div class="form-row">
+                <label for="bdtate">Birthday</label>
+                <input type="date" name="bdate" id="bdate">
+            </div>
+
+            <div class="form-row">
+                <label for = "password">Password</label>
+                <input id = "password" type = "password" name="pass">
+            </div>
+
+            <div class="form-row">
+                <label for ="phoneNum">Phone Number</label>
+                <input id = "phoneNum" type="tel" name = "phoneNum" placeholder="+01">
+            </div>
+
+            <div class="form-row">
+                <label for = "state"> State</label>
+                <select name = "state" id = "state">
+                    <option value="blank">-------</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="AK">Alaska</option>
+                    <option value="CA">California</option>
+                    <option value="DE">Delaware</option>
+                    <option value="ID">Idaho</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="ME">Maine</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="NY">New York</option>
+                </select>
+            </div>
+
+            <div class="check-row">
+                <div class="spacer">Gender:</div>
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+            </div>
+    
+                <div class="form-row">
+                    <label for="comments">Comments</label>
+                    <textarea name="comments" id="comments"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="spacer"></div>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terms" value="agreed" required>
+                        I agree to the terms and conditions.
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <div class="spacer"></div>
+                    <input type="submit" value="Sign Up">
+                </div>
+                </fieldset>
+            </div>
+
+            <div class="form-row">
+                <label for 
+            </div> 
+    </main>
+
+
+    <footer>
+        <p class="copyright">&copy; 2026 Kyosuke Kurokawa</p>
+    </footer>
+</body>
+</html>

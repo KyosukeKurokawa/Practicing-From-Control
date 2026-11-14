@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(174, 192, 214);
+    color: rgb(127, 130, 142);
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+main {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+fieldset {
+    background-color:rgb(224, 236, 247);
+    border: thin solid rgb(52, 90, 239);
+    box-shadow: 1px 1px 1px;
+    padding: 40px;
+    border-radius: 30px;
+}
+legend {
+    background-color: rgb(25, 97, 180);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.form-row , .check-row{ 
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+    border-radius: 10px;
+    
+}
+
+.form-row label{
+    width: 150px;
+    text-align: right;
+    border-radius: 60px;
+}
+
+.spacer {
+    width: 150px;
+    text-align: right;
+}
+
+.form-row input:not([type="submit"]) {
+    padding: 5px;
+    background-color: #fcfbdc;
+    border-radius: 60px;
+}
+
+.form-row input:focus {
+    background-color: rgb(243, 231, 235);
+}
+
+.form-row input[type="submit"] {
+    padding: 10px;
+    background-color: rgb(25, 97, 180);
+    color: white;
+    border-radius: 60px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+/* for mobile */
+@media (max-width: 600px) {
+    .form-row, .check-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    form-row label, .spacer {
+        width: auto;
+        text-align: left;
+    }
+    .form-row input[type="submit"] {
+        width: 100%;
+        padding: 16px;
+        font-size: 1.2rem;
+    }
+}
