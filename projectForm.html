@@ -18,7 +18,7 @@
       </ul>
     </nav>
     <main>
-        <form action="formprocessing.html" method="post">
+        <form id="signup-form" action="formprocessing.html" method="post">
             <fieldset>
                 <legend>Account</legend>
             <div class="form-row">
@@ -89,8 +89,51 @@
             </div>
 
             <div class="form-row">
-                <label for 
-            </div> 
+                <label for></label>
+            </div>
+
+            <div>
+                <h2>Question</h2>
+                    <h3>What is JavaScript? How did it get its name?</h3>
+                    <p>JavaScript is a programming language that makes websites interactive, and it was named after the popular language "Java".</p>
+                    <h3>What are the two ways you can run JavaScript?</h3>
+                    <p>We can run JavaScript either inside a web browser or on a server or computer using a tool called Node.js.</p>
+                    <h3>What is jQuery? Is it still popular today?</h3>
+                    <p>jQuery is a tool that made writing JavaScript much shorter and easier in the past, though it is no longer popular for new websites because modern JavaScript have replaced it.</p>
+                    <h3>What is the most popular front-end js library today?</h3>
+                    <p>The most popular front end JavaScript library today is react, which is widely used to build fast and modern website interfaces.</p>
+                    <h3>How does your code prevent the form from being submitted? Why do we need to prevent it?</h3>
+                    <p>people stop a form from submitting by using event.preventDefault(), which is necessary so the page does not automatically reload before your JavaScript code can check the user's input or send the data in the background.</p>
+            </div>
+        <script>
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert("Form Submitted");
+
+        const fullname = document.getElementById('personname').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const age = document.getElementById('bdate').value;
+
+        if (!fullname || !email) {
+            alert("You need a name and email.");
+            return;
+        }
+        if (!age || age < 18) {
+            alert("You need to be 18");
+            return;
+        }
+        
+        const formData = {
+            name: fullname,
+            email: email,
+            password: password,
+            age: age,
+        };
+        
+        console.log(formData);
+    });
+        </script>
     </main>
 
 
