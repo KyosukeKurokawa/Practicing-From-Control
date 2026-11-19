@@ -94,45 +94,63 @@
 
             <div>
                 <h2>Question</h2>
-                    <h3>What is JavaScript? How did it get its name?</h3>
-                    <p>JavaScript is a programming language that makes websites interactive, and it was named after the popular language "Java".</p>
-                    <h3>What are the two ways you can run JavaScript?</h3>
-                    <p>We can run JavaScript either inside a web browser or on a server or computer using a tool called Node.js.</p>
-                    <h3>What is jQuery? Is it still popular today?</h3>
-                    <p>jQuery is a tool that made writing JavaScript much shorter and easier in the past, though it is no longer popular for new websites because modern JavaScript have replaced it.</p>
-                    <h3>What is the most popular front-end js library today?</h3>
-                    <p>The most popular front end JavaScript library today is react, which is widely used to build fast and modern website interfaces.</p>
-                    <h3>How does your code prevent the form from being submitted? Why do we need to prevent it?</h3>
-                    <p>people stop a form from submitting by using event.preventDefault(), which is necessary so the page does not automatically reload before your JavaScript code can check the user's input or send the data in the background.</p>
+                    <h3>What is AJAX?</h3>
+                    <p>AJAX lets a web page send and receive data in the background without reloading the entire page.</p>
+                    <h3>Why do you put your JS Code in a separate file?</h3>
+                    <p>Putting JavaScript in a separate file keeps your code organized, reusable across pages, and easier to read and maintain.</p>
+                    <h3>How do you use the inspector (DevTools) to debug your JavaScript? How do you find the line number of an error?</h3>
+                    <p>Open DevTools, check the Console and Network tabs for problems, and click the file link next to a red error to see its exact line number.</p>
+                    <h3>Do your form and fields have the same ids that your JavaScript uses? Does the Console show any errors? List your ids, and fix any errors before you submit.</h3>
+                    <p>Check that every HTML element id matches getElementById in JavaScript and fix any Console errors I cannot see your files, list your own form and field ids and verify the Console is clean before submitting.</p>
             </div>
         <script>
-    document.getElementById('signup-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert("Form Submitted");
+                document.getElementById('signup-form').addEventListener('submit', function (event) {
+            event.preventDefault();
 
-        const fullname = document.getElementById('personname').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const age = document.getElementById('bdate').value;
+            const form = event.target;
+            const fullname = document.getElementById('personname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const age = document.getElementById('bdate').value;
+            const message = document.getElementById('message');
 
-        if (!fullname || !email) {
-            alert("You need a name and email.");
-            return;
-        }
-        if (!age || age < 18) {
-            alert("You need to be 18");
-            return;
-        }
-        
-        const formData = {
-            name: fullname,
-            email: email,
-            password: password,
-            age: age,
-        };
-        
-        console.log(formData);
-    });
+            if (!fullname || !email) {
+                alert("You need a name and email.");
+                return;
+            }
+
+            if (!age || age < 18) {
+                alert("You need to be 18");
+                return;
+            }
+
+            const formData = {
+                name: fullname,
+                email: email,
+                password: password,
+                age: age
+            };
+
+            console.log(formData);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "submit.json", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    if (message) {
+                        message.textContent = response.message;
+                    }
+                    form.reset();
+                } else if (xhr.readyState === 4) {
+                    alert("Error submitting form.");
+                }
+            };
+
+            xhr.send(JSON.stringify(formData));
+        });
         </script>
     </main>
 
